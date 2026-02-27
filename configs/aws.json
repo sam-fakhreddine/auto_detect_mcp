@@ -1,4 +1,5 @@
 {
+  "config_version": "1",
   "name": "aws",
   "description": "AWS infrastructure MCP servers (documentation, IAC, diagrams)",
   "signals": {
