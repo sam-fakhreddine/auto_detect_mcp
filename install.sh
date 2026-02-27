@@ -11,7 +11,7 @@ echo "Installing auto-detect-mcp..."
 # Must run from repo root
 [[ -f "hook.py" ]] || { echo "Error: hook.py not found. Run from the repository root." >&2; exit 1; }
 [[ -d "configs" ]] || { echo "Error: configs/ directory not found." >&2; exit 1; }
-compgen -G "configs/*.json" > /dev/null 2>&1 || { echo "Error: no configs/*.json found." >&2; exit 1; }
+compgen -G "configs/*.toml" > /dev/null 2>&1 || { echo "Error: no configs/*.toml found." >&2; exit 1; }
 
 # Require python3
 command -v python3 >/dev/null 2>&1 || { echo "Error: python3 not found in PATH." >&2; exit 1; }
@@ -29,7 +29,7 @@ echo "  ✓ Hook installed to $HOOK_DEST"
 
 # ── Configs ───────────────────────────────────────────────────────────────────
 mkdir -p "$CONFIG_DIR"
-for f in configs/*.json; do
+for f in configs/*.toml; do
   name=$(basename "$f")
   dest="$CONFIG_DIR/$name"
   if [[ "$name" == example-* ]]; then

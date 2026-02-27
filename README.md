@@ -60,7 +60,7 @@ Multiple configs can coexist. If more than one matches, their `mcpServers` are m
 
 ## Bundled Configs
 
-### `aws.json`
+### `aws.toml`
 
 Detects AWS infrastructure projects and loads three MCP servers:
 
@@ -76,7 +76,7 @@ Detects AWS infrastructure projects and loads three MCP servers:
 - Globs: `**/*.tf`, `**/*.tfvars`
 - Packages: `aws-cdk-lib`, `@aws-sdk/*`, `boto3`, `aws-lambda-powertools` (across `package.json`, `requirements.txt`, `pyproject.toml`, `go.mod`)
 
-> The bundled `aws.json` uses placeholder URLs. Update them to point to your own self-hosted MCP server instance.
+> The bundled `aws.toml` uses placeholder URLs. Update them to point to your own self-hosted MCP server instance.
 
 ## Manual Override
 

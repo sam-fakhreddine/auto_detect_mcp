@@ -3,7 +3,7 @@
 auto-detect-mcp — UserPromptSubmit hook for Claude Code.
 
 Runs once per session. Scans the project for signals defined in
-~/.config/auto-detect-mcp/configs/*.json and writes .mcp.json if
+~/.config/auto-detect-mcp/configs/*.toml and writes .mcp.json if
 any match. Silent when nothing is detected.
 """
 import sys
