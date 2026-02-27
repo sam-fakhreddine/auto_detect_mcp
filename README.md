@@ -67,11 +67,11 @@ Multiple configs can coexist. If more than one matches, their `mcpServers` are m
 
 Detects AWS infrastructure projects and loads three MCP servers:
 
-| Server | Tools | Purpose |
+| Server | Purpose | Source |
 |---|---|---|
-| `aws-documentation` | 3 | Search and read AWS docs |
-| `aws-iac` | 9 | CDK, CloudFormation validation and docs |
-| `aws-diagram` | 3 | Generate AWS architecture diagrams |
+| `aws-documentation` | Latest AWS docs and API references | [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server) |
+| `aws-iac` | CloudFormation docs, CDK best practices, construct examples | [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/aws-iac-mcp-server) |
+| `aws-diagram` | Generate architecture diagrams and technical illustrations | [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server) |
 
 **Signals detected:**
 
