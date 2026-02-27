@@ -1,0 +1,56 @@
+{
+  "name": "aws",
+  "description": "AWS infrastructure MCP servers (documentation, IAC, diagrams)",
+  "signals": {
+    "files": [
+      "cdk.json",
+      "samconfig.toml",
+      "template.yaml",
+      "template.json",
+      "serverless.yml",
+      "serverless.yaml",
+      ".aws-sam"
+    ],
+    "globs": [
+      "**/*.tf",
+      "**/*.tfvars"
+    ],
+    "package_keywords": {
+      "package.json": [
+        "aws-cdk-lib",
+        "aws-cdk",
+        "@aws-sdk",
+        "aws-lambda",
+        "serverless"
+      ],
+      "requirements.txt": [
+        "boto3",
+        "aws-cdk-lib",
+        "aws-lambda-powertools"
+      ],
+      "pyproject.toml": [
+        "boto3",
+        "aws-cdk-lib",
+        "aws-lambda-powertools"
+      ],
+      "go.mod": [
+        "aws/aws-cdk-go",
+        "aws/aws-sdk-go"
+      ]
+    }
+  },
+  "mcpServers": {
+    "aws-documentation": {
+      "type": "http",
+      "url": "https://your-mcp-host.example.com/aws-documentation/mcp"
+    },
+    "aws-iac": {
+      "type": "http",
+      "url": "https://your-mcp-host.example.com/aws-iac/mcp"
+    },
+    "aws-diagram": {
+      "type": "http",
+      "url": "https://your-mcp-host.example.com/aws-diagram/mcp"
+    }
+  }
+}

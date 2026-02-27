@@ -1,0 +1,23 @@
+{
+  "name": "vercel",
+  "description": "Example: Vercel MCP server for deployment tooling",
+  "signals": {
+    "files": [
+      "vercel.json",
+      ".vercelignore"
+    ],
+    "globs": [],
+    "package_keywords": {
+      "package.json": [
+        "@vercel/sdk",
+        "vercel"
+      ]
+    }
+  },
+  "mcpServers": {
+    "vercel": {
+      "type": "http",
+      "url": "https://your-vercel-mcp-server.example.com/mcp"
+    }
+  }
+}
