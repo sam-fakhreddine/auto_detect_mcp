@@ -86,17 +86,17 @@ The hook never overwrites servers already in `.mcp.json`. To opt a project out, 
 { "mcpServers": {} }
 ```
 
-To force a re-scan within a session, delete the marker:
+To force a re-scan on the next session start:
 
 ```bash
-rm ~/.claude/auto-detect-mcp-cache/<session-id>
+rm -rf ~/.claude/auto-detect-mcp-cache/
 ```
 
 ## How the Once-Per-Session Guard Works
 
-On first run, the hook writes a marker file at `~/.claude/auto-detect-mcp-cache/{session_id}`. Every subsequent prompt in that session hits the marker check and exits immediately — no filesystem scanning, no overhead.
+On first run, the hook writes a marker file keyed to the session ID. Every subsequent prompt hits the marker check and exits immediately — no filesystem scanning, no overhead.
 
-Old markers are pruned automatically (keeps last 100).
+Markers are pruned automatically (keeps last 100).
 
 ## License
 
