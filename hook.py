@@ -10,6 +10,7 @@ import sys
 import json
 import os
 import re
+import tomllib
 from pathlib import Path
 
 CONFIG_DIR = Path(os.getenv("AUTO_DETECT_MCP_CONFIG_DIR",
@@ -49,13 +50,13 @@ def load_configs() -> list:
     if not CONFIG_DIR.exists():
         return []
     configs = []
-    for f in CONFIG_DIR.glob("*.json"):
+    for f in CONFIG_DIR.glob("*.toml"):
         try:
-            data = json.loads(f.read_text(encoding="utf-8"))
+            data = tomllib.loads(f.read_text(encoding="utf-8"))
             if validate_config(data, f.name):
                 configs.append(data)
-        except json.JSONDecodeError as e:
-            warn(f"Skipping {f.name}: invalid JSON ({e})")
+        except tomllib.TOMLDecodeError as e:
+            warn(f"Skipping {f.name}: invalid TOML ({e})")
         except OSError as e:
             warn(f"Skipping {f.name}: read error ({e})")
     return configs

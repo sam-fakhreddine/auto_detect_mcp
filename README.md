@@ -32,31 +32,28 @@ cd auto_detect_mcp
 bash install.sh
 ```
 
-That's it. No dependencies beyond Python 3 (stdlib only).
+That's it. No dependencies beyond Python 3.12+ (stdlib only).
 
 ## Adding Your Own Configs
 
-Drop a `.json` file in `~/.config/auto-detect-mcp/configs/`:
+Drop a `.toml` file in `~/.config/auto-detect-mcp/configs/`:
 
-```json
-{
-  "name": "my-tooling",
-  "description": "MCP servers for my tooling",
-  "signals": {
-    "files": ["my-config.json"],
-    "globs": ["**/*.myext"],
-    "package_keywords": {
-      "package.json": ["my-package"],
-      "requirements.txt": ["my-lib"]
-    }
-  },
-  "mcpServers": {
-    "my-server": {
-      "type": "http",
-      "url": "https://my-mcp-server.example.com/mcp"
-    }
-  }
-}
+```toml
+config_version = "1"
+name = "my-tooling"
+description = "MCP servers for my tooling"
+
+[signals]
+files = ["my-config.json"]
+globs = ["**/*.myext"]
+
+[signals.package_keywords]
+"package.json"     = ["my-package"]
+"requirements.txt" = ["my-lib"]
+
+[mcpServers.my-server]
+type = "http"
+url  = "https://my-mcp-server.example.com/mcp"
 ```
 
 Multiple configs can coexist. If more than one matches, their `mcpServers` are merged into `.mcp.json`.

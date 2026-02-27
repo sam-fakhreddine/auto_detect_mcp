@@ -15,8 +15,8 @@ compgen -G "configs/*.json" > /dev/null 2>&1 || { echo "Error: no configs/*.json
 
 # Require python3
 command -v python3 >/dev/null 2>&1 || { echo "Error: python3 not found in PATH." >&2; exit 1; }
-python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3, 8) else 1)' \
-  || { echo "Error: Python 3.8+ required." >&2; exit 1; }
+python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)' \
+  || { echo "Error: Python 3.12+ required." >&2; exit 1; }
 
 # Trap for partial install cleanup messaging
 trap 'echo "Install failed. Check $SETTINGS.bak.* to restore settings if needed." >&2' ERR
