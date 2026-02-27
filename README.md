@@ -27,7 +27,7 @@ If `.mcp.json` already exists and contains the detected servers, the hook is sil
 ## Install
 
 ```bash
-git clone https://github.com/sam-fakhreddine/auto_detect_mcp
+git clone https://github.com/sam-fakhreddine/lazy-load-mcp
 cd auto_detect_mcp
 bash install.sh
 ```
